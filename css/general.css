@@ -1,0 +1,172 @@
+/* 
+--- 01 TYPOGRAPHY SYSTEM
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Regular: 400
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+--black-chocolate: #251e18;
+--rocket-metallic: #938581;
+--tint-metallic: #806e67;
+--deep-space-sparkle: #466362;
+--shadow-blue: #4f627d;
+--beau-blue: #c5d5e4; 
+--my-color: #f2dbc8; 
+GREYS #555 #333
+
+--- 03 WHITESPACE
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  /* font-size: 10px; */
+
+  /* 10px / 16px = 0.625 = 62.5% */
+  /* Percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+body {
+  font-family: "Source Serif Pro", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+
+  /* Only works if there is nothing 
+  absolutely positioned in relation
+  to body */
+  overflow-x: hidden;
+}
+
+/**************************/
+/* REUSABLE COMPONENTS */
+/**************************/
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  row-gap: 3.2rem;
+  column-gap: 3.2rem;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 600;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  /* make the color fade in */
+  transition: all 0.3s;
+}
+.btn--full:link,
+.btn--full:visited {
+  background-color: #938581;
+  color: #fff;
+}
+.btn--full:hover,
+.btn--full:active {
+  background-color: #806e67;
+}
+/***************************/
+/* helper classes */
+/***************************/
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+.margin-right-md {
+  margin-right: 2.4rem;
+}
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+.margin-bottom-lg {
+  margin-bottom: 9.6rem !important;
+}
+.margin-top-sm {
+  margin-top: 3.2rem;
+}
+.margin-top-md {
+  margin-top: 6.4rem;
+}
+.padding-top-sm {
+  padding-top: 3.2rem !important;
+}
+.padding-top-md {
+  padding-top: 6.4rem;
+}
+.padding-bottom-md {
+  padding-bottom: 2.4rem !important;
+}
+.center-text {
+  text-align: center;
+}
+.strong {
+  font-weight: 700;
+}
+.color-text {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #6c85ad;
+}

@@ -1,0 +1,248 @@
+/* rem and em do not depend on html 
+font size in media queries. instead 
+we assume 1rem - 1em = 16px.
+rem has some bugs in some browesers 
+when used in media queries.  */
+
+/***********************************/
+/* below 1344px (smaller desktops) */
+/***********************************/
+
+@media (max-width: 84em) {
+  .welcome {
+    max-width: 120rem;
+  }
+}
+/***************************/
+/* below 992px (tablets) */
+/***************************/
+/* 62em * 16 = 992px */
+@media (max-width: 62em) {
+  .header-xbar {
+    justify-content: space-around;
+  }
+  .logo {
+    height: 5.2rem;
+  }
+  .address a {
+    display: none;
+  }
+  .phone a {
+    font-size: 2.4rem;
+  }
+  .deficiency {
+    display: none;
+  }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+  .cta {
+    /* 3/5 = 60% + 2/5 = 40% */
+    grid-template-columns: 3fr 2fr;
+  }
+  .cta-btns {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 2.4rem;
+  }
+  .cta-btns .margin-right-md {
+    margin-right: 0;
+  }
+  .grid--4-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  /* MOBILE NAV */
+  .btn-mobile-nav {
+    display: block;
+    position: absolute;
+    top: 16%;
+    right: 4%;
+  }
+  .main-nav {
+    background-color: rgba(197, 213, 228, 0.92);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+
+    /* HIDE NAV CORRECTLY */
+    /* 1) hide nav visually */
+    opacity: 0;
+    /* 2) make is unaccesible to mouse and keybrd */
+    pointer-events: none;
+    /* 3)hhide nav from screen readers */
+    visibility: hidden;
+  }
+  .nav-open .main-nav {
+    z-index: 9999;
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+  .main-nav-list {
+    flex-direction: column;
+    gap: 6.4rem;
+  }
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}
+/***************************/
+/* below 800px (tablets) */
+/***************************/
+/* 50em * 16 = 800px */
+@media (max-width: 50em) {
+  .address a {
+    display: none;
+  }
+  .phone a {
+    display: none;
+  }
+  .logo {
+    height: 4.4rem;
+  }
+  .heading-primary {
+    font-size: 3rem;
+    margin-bottom: 2.4rem;
+  }
+  .carousel-item {
+    height: 30rem; /*height you want*/
+  }
+  .section-welcome {
+    padding: 3.2rem 0 3.2rem 0;
+  }
+  .welcome p {
+    font-size: 2rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .section-cta {
+    padding: 6.4rem 0 6.4rem 0;
+    background-color: #4f627d;
+  }
+  .cta {
+    grid-template-columns: 1fr;
+  }
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1;
+  }
+  .cta-text {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 3.2rem;
+  }
+  .contacts {
+    display: none;
+  }
+  .footer {
+    padding: 3.2rem 0 3.2rem 0;
+  }
+  .footer-link:link,
+  .footer-link:visited {
+    line-height: 1.2;
+    font-size: 1.6rem;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .margin-top-sm {
+    margin-top: 0rem;
+  }
+  .margin-top-md {
+    margin-top: 4.8rem;
+  }
+  .captions {
+    display: none;
+  }
+  .section-contact {
+    padding: 3.2rem 0 3.2rem 0;
+  }
+  .padding-top-md {
+    padding-top: 4.8rem;
+  }
+  .contact-form {
+    /* grid-template-columns: 1fr; */
+    row-gap: 1.2rem;
+  }
+  .section-contact p {
+    font-size: 1.8rem;
+    margin-bottom: 3.2rem;
+    font-weight: 600;
+  }
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .color-text {
+    font-size: 2.4rem;
+  }
+}
+/***************************/
+/* below 608px (tablets) */
+/***************************/
+/* 38em * 16 = 608px */
+@media (max-width: 38em) {
+  .phone a {
+    display: none;
+  }
+  .heading-primary {
+    font-size: 2.4rem;
+    margin-bottom: 2.4rem;
+  }
+  .carousel-item {
+    height: 28rem; /*height you want*/
+  }
+  .welcome p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+  .heading-secondary {
+    font-size: 3.6rem;
+    margin-bottom: 8rem;
+  }
+  .grid {
+    column-gap: 2rem;
+  }
+  .footer-link:link,
+  .footer-link:visited {
+    line-height: 1.2;
+    font-size: 1.4rem;
+  }
+  .cta-img-box {
+    height: 25rem;
+  }
+  .logo-col {
+    grid-column: 2/3;
+  }
+  .contact-col {
+    display: none;
+  }
+  .color-text {
+    font-size: 2.4rem;
+  }
+}
+/* - Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 
+/ 36 / 44 / 52 / 62 / 74 / 86 / 98 */
+
+/* --- 03 WHITESPACE
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+ */
