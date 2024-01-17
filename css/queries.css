@@ -54,9 +54,10 @@ when used in media queries.  */
   }
   /* MOBILE NAV */
   .btn-mobile-nav {
+    /* border: 1px solid red; */
     display: block;
     position: absolute;
-    top: 16%;
+    top: 25%;
     right: 4%;
   }
   .main-nav {
@@ -76,31 +77,42 @@ when used in media queries.  */
     /* HIDE NAV CORRECTLY */
     /* 1) hide nav visually */
     opacity: 0;
-    /* 2) make is unaccesible to mouse and keybrd */
+    /* 2) make is unaccesible to mouse and keyboard */
     pointer-events: none;
-    /* 3)hhide nav from screen readers */
+    /* 3)hide nav from screen readers */
     visibility: hidden;
   }
   .nav-open .main-nav {
-    z-index: 9999;
+    z-index: 1;
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
     transform: translateX(0);
   }
-  .nav-open .icon-mobile-nav[name="close-outline"] {
+  /* switch between close 
+  and open icons */
+  .nav-open .close-icon {
     display: block;
   }
-  .nav-open .icon-mobile-nav[name="menu-outline"] {
+  .nav-open .open-icon {
     display: none;
   }
+  /* ///////////////// */
+
+  .btn-mobile-nav:focus {
+    outline: none;
+  }
+  .close-icon {
+    display: none;
+  }
+
   .main-nav-list {
     flex-direction: column;
-    gap: 6.4rem;
+    gap: 8rem;
   }
   .main-nav-link:link,
   .main-nav-link:visited {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 }
 /***************************/
